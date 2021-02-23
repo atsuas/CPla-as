@@ -6,11 +6,14 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            for (var year = 1; year <= 64; year++)
+            var line = "";
+            do
             {
-                var westernYear = year + 1925;
-                Console.WriteLine($"昭和{year} {westernYear}年");
+                Console.WriteLine("何か入力してください");
+                line = Console.ReadLine();
             }
+            while (line == "");
+            Console.WriteLine(line);
         }
     }
 }
