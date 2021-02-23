@@ -9,4 +9,12 @@ namespace ClassSample
             
         }
     }
+
+    class Book
+    {
+        public string Title { get; set; }
+        public string Aither { get; set; }
+        public int Pages { get; set; }
+        public int Rating { get; set; }
+    }
 }
