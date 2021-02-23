@@ -22,11 +22,8 @@ namespace ClassSample
                 Rating = 4
             };
 
-            var title1 = book1.Title;
-            var title2 = book2.Title;
-
-            Console.WriteLine(title1);
-            Console.WriteLine(title2);
+            book1.Print();
+            book2.Print();
             
         }
     }
