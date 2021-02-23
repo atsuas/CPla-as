@@ -6,26 +6,20 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            for (var rate = 0.01m; rate <= 0.10m; rate += 0.01m)
+            var scores = new int[10];
+            for (var i = 0; i < scores.Length; i++)
             {
-                Console.Write($"rate={rate}:");
-                var sum = 100_000;
-                for (var n = 1; n <= 10; n++)
-                {
-                    sum += (int)(sum * rate);
-                    if (sum > 200_000)
-                    {
-                        Console.WriteLine($"{n}年後に200,000円を超えました");
-
-                        break;
-                    }
-                }
-                if (sum <= 200_000)
-                {
-                    Console.WriteLine($"200,000円を超えませんでした。 sum={sum}");
-                }
+                var line = Console.ReadLine();
+                var number = int.Parse(line);
+                scores[i] = number;
             }
-            Console.WriteLine("ループを終了しました");
+
+            var total = 0;
+            for (var i = 0; i < scores.Length; i++)
+            {
+                total += scores[i];
+            }
+            Console.WriteLine("合計: {0}", total);
         }
     }
 }
