@@ -6,14 +6,14 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            var line = "";
-            do
+            for (var i = 0; i < 50; i++)
             {
-                Console.WriteLine("何か入力してください");
-                line = Console.ReadLine();
+                if (i % 13 != 0)
+                {
+                    continue;
+                }
+                Console.WriteLine($"{i}は13で割り切れる数字です");
             }
-            while (line == "");
-            Console.WriteLine(line);
         }
     }
 }
