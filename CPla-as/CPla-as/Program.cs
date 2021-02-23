@@ -6,8 +6,9 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("文字列は(\"で囲みます");
-            Console.WriteLine("おはよう\nこんにちは\nさようなら");
+            var source = 15.8;
+            var width = (int)source;    //キャスト
+            Console.WriteLine(width);
         }
     }
 }
