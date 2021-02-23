@@ -1,0 +1,13 @@
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\bin\Debug\netcoreapp3.1\ClassSample.exe
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\bin\Debug\netcoreapp3.1\ClassSample.deps.json
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\bin\Debug\netcoreapp3.1\ClassSample.runtimeconfig.json
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\bin\Debug\netcoreapp3.1\ClassSample.runtimeconfig.dev.json
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\bin\Debug\netcoreapp3.1\ClassSample.dll
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\bin\Debug\netcoreapp3.1\ClassSample.pdb
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\obj\Debug\netcoreapp3.1\ClassSample.csprojAssemblyReference.cache
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\obj\Debug\netcoreapp3.1\ClassSample.AssemblyInfoInputs.cache
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\obj\Debug\netcoreapp3.1\ClassSample.AssemblyInfo.cs
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\obj\Debug\netcoreapp3.1\ClassSample.csproj.CoreCompileInputs.cache
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\obj\Debug\netcoreapp3.1\ClassSample.dll
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\obj\Debug\netcoreapp3.1\ClassSample.pdb
+C:\Users\aoyuu\OneDrive\デスクトップ\C#フォルダ-Windows\Cpla-as\CPla-as\ClassSample\ClassSample\obj\Debug\netcoreapp3.1\ClassSample.genruntimeconfig.cache
