@@ -6,10 +6,10 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            var tax = 1.1;
             var count = Console.ReadLine();
             var price = int.Parse(count);
-            var total = (int)(price * tax);
+            var point = (price * 0.01 * 1) * 5;
+            var total = price + point;
             Console.WriteLine(total);
         }
     }
