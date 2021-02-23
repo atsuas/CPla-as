@@ -37,5 +37,11 @@ namespace ClassSample
         public string Auther { get; set; }
         public int Pages { get; set; }
         public int Rating { get; set; }
+
+        public void Print()
+        {
+            Console.WriteLine($" {this.Title}");
+            Console.WriteLine($" {this.Auther} {this.Pages}ページ 評価:{this.Rating}");
+        }
     }
 }
