@@ -6,20 +6,9 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            var scores = new int[10];
-            for (var i = 0; i < scores.Length; i++)
-            {
-                var line = Console.ReadLine();
-                var number = int.Parse(line);
-                scores[i] = number;
-            }
-
-            var total = 0;
-            for (var i = 0; i < scores.Length; i++)
-            {
-                total += scores[i];
-            }
-            Console.WriteLine("合計: {0}", total);
+            var array2d = new int[4, 3];
+            array2d[3, 2] = 12;
+            Console.WriteLine(array2d[3, 2]);
         }
     }
 }
