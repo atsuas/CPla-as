@@ -8,7 +8,7 @@ namespace CPla_as
         {
             var season = '夏';
             var temperature = 39;
-            var str = string.Format("{0}の気温は、{1}度です", season, temperature);
+            var str = $"{season}の気温は、{temperature}度です";
 
             Console.WriteLine(str);
         }
