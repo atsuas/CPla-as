@@ -6,11 +6,11 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            var total = 100;
-            var line = Console.ReadLine();
-            var count = int.Parse(line);    //文字列をint型に変換
-            var num = total / count;
-            Console.WriteLine(num);
+            var season = '夏';
+            var temperature = 39;
+            var str = string.Format("{0}の気温は、{1}度です", season, temperature);
+
+            Console.WriteLine(str);
         }
     }
 }
