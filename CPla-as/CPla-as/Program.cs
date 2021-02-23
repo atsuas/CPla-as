@@ -6,11 +6,11 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            var count = Console.ReadLine();
-            var price = int.Parse(count);
-            var point = (price * 0.01 * 1) * 5;
-            var total = price + point;
-            Console.WriteLine(total);
+            var num = 15;
+            if (num % 3 == 0 || num % 5 == 0)
+            {
+                Console.WriteLine("numは3か5でわりきれる");
+            }
         }
     }
 }
