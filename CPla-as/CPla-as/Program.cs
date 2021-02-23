@@ -6,27 +6,12 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("ご希望の時間帯の番号をにゅうりょくしてください");
-            Console.WriteLine("1:9時");
-            Console.WriteLine("2:12時");
-            Console.WriteLine("3:15時");
-            var line = Console.ReadLine();
-            var value = int.Parse(line);
-
-            switch (value)
+            var year = 1;
+            while (year <= 64)
             {
-                case 1:
-                    Console.WriteLine("9時に予約しました");
-                    break;
-                case 2:
-                    Console.WriteLine("12時に予約しました");
-                    break;
-                case 3:
-                    Console.WriteLine("15時に予約しました");
-                    break;
-                default:
-                    Console.WriteLine("入力された値がおかしいです");
-                    break;
+                var westernYear = year + 1925;
+                Console.WriteLine($"昭和{year}年 {westernYear}年");
+                year += 1;
             }
         }
     }
