@@ -6,9 +6,11 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            var source = 15.8;
-            var width = (int)source;    //キャスト
-            Console.WriteLine(width);
+            var total = 100;
+            var line = Console.ReadLine();
+            var count = int.Parse(line);    //文字列をint型に変換
+            var num = total / count;
+            Console.WriteLine(num);
         }
     }
 }
