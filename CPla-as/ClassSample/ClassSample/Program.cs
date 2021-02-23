@@ -6,7 +6,7 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var book = new Book
+            var book1 = new Book
             {
                 Title = "吾輩は猫である",
                 Auther = "夏目漱石",
@@ -14,9 +14,19 @@ namespace ClassSample
                 Rating = 5
             };
 
-            var title = book.Title;
+            var book2 = new Book
+            {
+                Title = "太宰治",
+                Auther = "だじゃお",
+                Pages = 500,
+                Rating = 4
+            };
 
-            Console.WriteLine(title);
+            var title1 = book1.Title;
+            var title2 = book2.Title;
+
+            Console.WriteLine(title1);
+            Console.WriteLine(title2);
             
         }
     }
