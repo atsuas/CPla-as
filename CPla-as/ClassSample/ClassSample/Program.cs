@@ -40,8 +40,8 @@ namespace ClassSample
 
         public void Print()
         {
-            Console.WriteLine($" {this.Title}");
-            Console.WriteLine($" {this.Auther} {this.Pages}ページ 評価:{this.Rating}");
+            Console.WriteLine($" {Title}");
+            Console.WriteLine($" {Auther} {Pages}ページ 評価:{Rating}");
         }
     }
 }
