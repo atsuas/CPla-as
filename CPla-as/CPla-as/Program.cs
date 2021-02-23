@@ -6,7 +6,11 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int age;
+
+            age = 23;
+
+            Console.WriteLine("年齢 : {0}", age);
         }
     }
 }
