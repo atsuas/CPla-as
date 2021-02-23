@@ -6,9 +6,8 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            var pi = 3.14f;
-            var distance = 8L;
-            var Tax = price * 1.1;
+            Console.WriteLine("文字列は(\"で囲みます");
+            Console.WriteLine("おはよう\nこんにちは\nさようなら");
         }
     }
 }
