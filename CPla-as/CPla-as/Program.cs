@@ -6,12 +6,11 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            string name;
+            Console.WriteLine("名前を入力してください");
 
-            name = "山田";
+            var name = Console.ReadLine();
 
-            Console.WriteLine("{0}さん、こんにちは", name);
-            Console.WriteLine("{0}さん、はじめまして", name);
+            Console.WriteLine("{0}さん、おはようございます", name);
 
         }
     }
