@@ -6,8 +6,9 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            var average = 3.28m;
-            Console.WriteLine(average);
+            var pi = 3.14f;
+            var distance = 8L;
+            var Tax = price * 1.1;
         }
     }
 }
