@@ -6,12 +6,10 @@ namespace CPla_as
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("名前を入力してください");
-
-            var name = Console.ReadLine();
-
-            Console.WriteLine("{0}さん、おはようございます", name);
-
+            var squareRoot = 1.41421356;
+            var sideLength = 10.0;
+            var diagonal = sideLength * squareRoot;
+            Console.WriteLine("対角線の長さ:{0}メートル", diagonal);
         }
     }
 }
