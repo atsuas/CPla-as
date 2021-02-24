@@ -41,4 +41,17 @@ namespace ClassSample
             Console.WriteLine($" {Auther} {Pages}ページ 評価:{Rating}");
         }
     }
+
+    class Sale
+    {
+        public string ProductName { get; set; }
+        public int UnitPrice { get; set; }
+        public int Quantity { get; set; }
+
+        public int GetAmount()
+        {
+            var amount = UnitPrice * Quantity;
+            return amount;
+        }
+    }
 }
