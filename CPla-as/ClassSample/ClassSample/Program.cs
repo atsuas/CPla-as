@@ -7,10 +7,10 @@ namespace ClassSample
         static void Main(string[] args)
         {
             var date = new DateTime(2020, 11, 7);
-            var year = date.Year;
-            var month = date.Month;
-            var day = date.Day;
-            Console.WriteLine("{0}年{1}月{2}日", year, month, date);
+            var date1 = date.AddDays(1);    //１日後を求める
+            var date2 = date.AddMonths(6);  //６か月後を求める
+            Console.WriteLine(date1);
+            Console.WriteLine(date2);
         }
     }
 }
