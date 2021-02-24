@@ -6,8 +6,13 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var today = DateTime.Today; //Todayは静的プロパティ、todayはDateTime型
-            Console.WriteLine($"{today.Year}年{today.Month}月{today.Day}日");
+            for (var year = 1868; year <= 2030; year++)
+            {
+                if (DateTime.IsLeapYear(year))  //インスタンスを生成しないでメソッドを呼び出している
+                {
+                    Console.WriteLine(year);
+                }
+            }
         }
     }
 }
