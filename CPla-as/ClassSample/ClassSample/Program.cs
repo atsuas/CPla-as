@@ -6,45 +6,26 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var bmicalc = new BmiCalculator();
-            var bmi = bmicalc.GetBmi(180, 80);
-            var type = bmicalc.GetBodyType(bmi);
-            Console.WriteLine($"あなたは{type}です");
-        }
-    }
-
-    class BmiCalculator
-    {
-        public double GetBmi(double height, double weight)
-        {
-            var meterstall = height / 100.0;
-            var bmi = weight / (meterstall * meterstall);
-            return bmi;
+            Print12Hour(5);
+            Print12Hour(18);
+            Print12Hour(25);
         }
 
-        public string GetBodyType(double bmi)
+        static void Print12Hour(int hour)
         {
-            if (bmi < 18.5)
+            if (hour < 0 || 24 < hour)
             {
-                return "痩せ型";
+                Console.WriteLine("正しい値ではありません");
+                return;
             }
-            if (bmi < 25)
+            if (hour <= 12)
             {
-                return "普通体重";
+                Console.WriteLine("午前{0}時です", hour);
             }
-            if (bmi < 30)
+            else
             {
-                return "肥満１度";
+                Console.WriteLine("午後{0}時です", hour - 12);
             }
-            if (bmi < 35)
-            {
-                return "肥満２度";
-            }
-            if (bmi < 40)
-            {
-                return "肥満３度";
-            }
-            return "肥満４度";
         }
     }
 }
