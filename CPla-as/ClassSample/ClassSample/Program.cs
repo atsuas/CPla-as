@@ -6,26 +6,19 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var sale = new Sale
-            {
-                ProductName = "おにぎり",
-                UnitPrice = 120,
-                Quantity = 4
-            };
-            var amount = sale.GetAmount();
-            Console.WriteLine($"合計金額:{amount}円");
+            var bmicalc = new BmiCalculator();
+            var bmi = bmicalc.GetBmi(178, 80);
+            Console.WriteLine("{0:.00}", bmi);
         }
     }
 
-    class Sale
+    class BmiCalculator
     {
-        public string ProductName { get; set; }
-        public int UnitPrice { get; set; }
-        public int Quantity { get; set; }
-
-        public int GetAmount()
+        public double GetBmi(double height, double weight)
         {
-            return UnitPrice * Quantity;
+            var metersTall = height / 100.0;
+            var bmi = weight / (metersTall * metersTall);
+            return bmi;
         }
     }
 }
