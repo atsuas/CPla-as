@@ -24,32 +24,27 @@ namespace ClassSample
 
         public string GetBodyType(double bmi)
         {
-            var type = "";
             if (bmi < 18.5)
             {
-                type = "瘦せ型";
+                return "痩せ型";
             }
-            else if (bmi < 25)
+            if (bmi < 25)
             {
-                type = "普通体重";
+                return "普通体重";
             }
-            else if (bmi < 30)
+            if (bmi < 30)
             {
-                type = "肥満1度";
+                return "肥満１度";
             }
-            else if (bmi < 35)
+            if (bmi < 35)
             {
-                type = "肥満２度";
+                return "肥満２度";
             }
-            else if (bmi < 40)
+            if (bmi < 40)
             {
-                type = "肥満３度";
+                return "肥満３度";
             }
-            else
-            {
-                type = "肥満４度";
-            }
-            return type;
+            return "肥満４度";
         }
     }
 }
