@@ -6,26 +6,11 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            Print12Hour(5);
-            Print12Hour(18);
-            Print12Hour(25);
-        }
-
-        static void Print12Hour(int hour)
-        {
-            if (hour < 0 || 24 < hour)
-            {
-                Console.WriteLine("正しい値ではありません");
-                return;
-            }
-            if (hour <= 12)
-            {
-                Console.WriteLine("午前{0}時です", hour);
-            }
-            else
-            {
-                Console.WriteLine("午後{0}時です", hour - 12);
-            }
+            var date = new DateTime(2020, 11, 7);
+            var year = date.Year;
+            var month = date.Month;
+            var day = date.Day;
+            Console.WriteLine("{0}年{1}月{2}日", year, month, date);
         }
     }
 }
