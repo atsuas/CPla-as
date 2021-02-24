@@ -6,11 +6,8 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var isLeapYear = DateTime.IsLeapYear(2020); //IsLeapYearは静的メソッド
-            if (isLeapYear)
-            {
-                Console.WriteLine("うるう年です");
-            }
+            var today = DateTime.Today; //Todayは静的プロパティ、todayはDateTime型
+            Console.WriteLine($"{today.Year}年{today.Month}月{today.Day}日");
         }
     }
 }
