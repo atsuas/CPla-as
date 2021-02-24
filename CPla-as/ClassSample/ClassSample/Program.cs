@@ -6,39 +6,14 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var book1 = new Book
+            var sale = new Sale
             {
-                Title = "吾輩は猫である",
-                Auther = "夏目漱石",
-                Pages = 600,
-                Rating = 5
+                ProductName = "おにぎり",
+                UnitPrice = 120,
+                Quantity = 4
             };
-
-            var book2 = new Book
-            {
-                Title = "太宰治",
-                Auther = "だじゃお",
-                Pages = 500,
-                Rating = 4
-            };
-
-            book1.Print();
-            book2.Print();
-            
-        }
-    }
-
-    class Book
-    {
-        public string Title { get; set; }
-        public string Auther { get; set; }
-        public int Pages { get; set; }
-        public int Rating { get; set; }
-
-        public void Print()
-        {
-            Console.WriteLine($" {Title}");
-            Console.WriteLine($" {Auther} {Pages}ページ 評価:{Rating}");
+            var amount = sale.GetAmount();
+            Console.WriteLine($"合計金額:{amount}円");
         }
     }
 
@@ -50,8 +25,7 @@ namespace ClassSample
 
         public int GetAmount()
         {
-            var amount = UnitPrice * Quantity;
-            return amount;
+            return UnitPrice * Quantity;
         }
     }
 }
