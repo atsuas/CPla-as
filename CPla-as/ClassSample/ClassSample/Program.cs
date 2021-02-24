@@ -6,11 +6,11 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var date = new DateTime(2020, 11, 7);
-            var date1 = date.AddDays(1);    //１日後を求める
-            var date2 = date.AddMonths(6);  //６か月後を求める
-            Console.WriteLine(date1);
-            Console.WriteLine(date2);
+            var isLeapYear = DateTime.IsLeapYear(2020); //IsLeapYearは静的メソッド
+            if (isLeapYear)
+            {
+                Console.WriteLine("うるう年です");
+            }
         }
     }
 }
