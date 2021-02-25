@@ -7,14 +7,11 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var lines = new string[]
+            var lines = File.ReadAllLines(@"C:\temp\ああああ.txt");
+            foreach (var line in lines)
             {
-                "あああああああああああ",
-                "いいいいいいいいいいいい",
-                "うううううううううううううう",
-                "ええええええええええええええええ"
-            };
-            File.WriteAllLines(@"C:\\temp\\ああああ.txt", lines);
+                Console.WriteLine(line);
+            }
         }
     }
 }
