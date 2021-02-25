@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;    //Fileクラスを使用する際に必要
 
 namespace ClassSample
 {
@@ -6,12 +7,14 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var str = "オブジェクト指向";
-            var sub1 = str.Substring(0,6);
-            var sub2 = str.Substring(6, 2);
-            Console.WriteLine(str);
-            Console.WriteLine(sub1);
-            Console.WriteLine(sub2);
+            var lines = new string[]
+            {
+                "あああああああああああ",
+                "いいいいいいいいいいいい",
+                "うううううううううううううう",
+                "ええええええええええええええええ"
+            };
+            File.WriteAllLines(@"C:\\temp\\ああああ.txt", lines);
         }
     }
 }
