@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;   //Listを使う際に必要
+using System.Collections.Generic;
 
 namespace ClassSample
 {
@@ -7,27 +7,36 @@ namespace ClassSample
     {
         static void Main()
         {
-            var lines = new List<string>
-            {
-                "おはよう",
-                "こんにちは",
-                "こんばんは"
-            };
-            lines.Add("おやすみ");  //Listに追加する際はAddを使う
-            lines.Add("さようなら");
-            lines.RemoveAt(2);  //リストから指定の要素を削除する
+            var books = new List<Book>();   //Book型のリストを生成
+            var book1 = new Book("吾輩は猫である", "夏目漱石", 620, 4);
+            books.Add(book1);   //1冊目を追加
+            var book2 = new Book("人間失格", "太宰治", 300, 5);
+            books.Add(book2);   //2冊目を追加
 
-            foreach (var s in lines)
+            //省略もできる
+            //books.Add(new Book("吾輩は猫である", "夏目漱石", 620, 4));
+            //books.Add(new Book("人間失格", "太宰治", 300, 5));
+
+            foreach (var book in books)
             {
-                Console.WriteLine(s);
+                Console.WriteLine($"{book.Title} {book.Auther} {book.Pages} {book.Rating}");
             }
+        }   
+    }
 
-            var count = lines.Count;    //リストの要素数を取得するにはCountを使う
-            Console.WriteLine(count);
+    class Book
+    {
+        public string Title { get; set; }
+        public string Auther { get; set; }
+        public int Pages { get; set; }
+        public int Rating { get; set; }
 
-            lines.Clear();  //すべての要素を削除するときはClearメソッドを使う
-            Console.WriteLine($"{lines.Count}");
-
+        public Book(string title, string auther, int pages, int rating)
+        {
+            Title = title;
+            Auther = auther;
+            Pages = pages;
+            Rating = rating;
         }
     }
 }
