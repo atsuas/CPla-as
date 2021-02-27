@@ -6,27 +6,25 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var person = new Person
-            {
-                FirstName = "たかし",
-                LastName = "小林"
-            };
-            var name1 = person.AddTitle("先生");  //引数を指定して呼び出す
-            var name2 = person.AddTitle();  //引数を省略して呼び出す
-            Console.WriteLine(name1);
-            Console.WriteLine(name2);
+            var mypet = new VirtualPet();   //インスタンス生成時にコンストラクタが呼び出される
+            Console.WriteLine($"Name: {mypet.Name}");
+            Console.WriteLine($"Mood: {mypet.Mood}");
+            Console.WriteLine($"Energy: {mypet.Energy}");
+
         }
 
-        class Person
+        class VirtualPet
         {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
+            public string Name { get; set; }
+            public int Mood { get; set; }
+            public int Energy { get; set; }
 
-            public string AddTitle(string title = "様")  //titleは省力可能な引数
+            public VirtualPet() //コンストラクターの名前はクラスと同じにする
             {
-                return $"{LastName}{FirstName} {title}";
+                Name = "エイミー";
+                Mood = 5;
+                Energy = 100;
             }
-           
         }
     }
 }
