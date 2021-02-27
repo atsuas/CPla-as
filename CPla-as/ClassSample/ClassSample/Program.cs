@@ -13,10 +13,21 @@ namespace ClassSample
                 Number = 368,
                 FirstName = "ともや",
                 LastName = "鈴木",
+                Email = "tomotomo@example.com",
                 HireDate = new DateTime(2016, 10, 3)
             };
             Console.WriteLine("従業員番号{0}の{1}は、{2}年に入社しました",
                 employee.Number, employee.FullName, employee.HireDate.Year);
+
+            //メソッドの呼び出し
+            var person = new Person
+            {
+                FirstName = "ゆか",
+                LastName = "佐々木",
+                Email = "sasasa@example.com"
+            };
+            person.Print();
+            employee.Print();
         }   
     }
 
@@ -29,25 +40,23 @@ namespace ClassSample
             get { return LastName + FirstName; }
         }
         public string Email { get; set; }
+
+        public void Print() //メソッドを追加
+        {
+            Console.WriteLine($"名前: {FullName} ({Email})");
+        }
     }
 
-    //従業員クラス
-    class Employee : Person    //Personクラスを継承
+    class Employee : Person
     {
-        //従業員番号
         public int Number { get; set; }
-        //入社年月日
         public DateTime HireDate { get; set; }
     }
 
-    //顧客クラス
     class Customer : Person
     {
-        //顧客ID
         public string Id { get; set; }
-        //顧客ランク
         public int Rank { get; set; }
-        //クレジットカード番号
         public string CreditCardNumber { get; set; }
     }
 }
