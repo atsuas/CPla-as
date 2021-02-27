@@ -6,39 +6,27 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var scores = new int[] { 55, 70, 43, 79, 17, 31, 48 };
-            var total = ArrayUtils.Total(scores);
-            Console.WriteLine(total);
-
-            var scores2 = new double[] { 5.8, 6.2, 5.9, 2.1, 6.6, 9.5, 3.8 };
-            var total2 = ArrayUtils.Total(scores2);
-            Console.WriteLine(total2);
+            var person = new Person
+            {
+                FirstName = "たかし",
+                LastName = "小林"
+            };
+            var name1 = person.AddTitle("先生");  //引数を指定して呼び出す
+            var name2 = person.AddTitle();  //引数を省略して呼び出す
+            Console.WriteLine(name1);
+            Console.WriteLine(name2);
         }
 
-        static class ArrayUtils
+        class Person
         {
-            //①int型の配列の数値の合計を求める
-            public static int Total(int [] numbers)
-            {
-                var total = 0;
-                foreach (var n in numbers)
-                {
-                    total += n;
-                }
-                return total;
-            }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
 
-            // ②double型の配列内の数値の合計を求める
-            public static double Total(double[] numbers)   //同じメソッド名で引数が異なる
+            public string AddTitle(string title = "様")  //titleは省力可能な引数
             {
-                var total = 0.0;
-                foreach (var n in numbers)
-                {
-                    total += n;
-                }
-                return total;
+                return $"{LastName}{FirstName} {title}";
             }
-
+           
         }
     }
 }
