@@ -8,13 +8,10 @@ namespace ClassSample
     {
         static void Main()
         {
-            var nums = new int[] { 6, 4, 3, 2, 5, 1, 9, 8, 7, };
-            var query = nums.OrderByDescending(x => x)
-                            .Take(3);    //先頭の3つを取り出す
-            foreach (var n in query)
-            {
-                Console.WriteLine(n);
-            }
+            var nums = new int[] { 62, 4, 34, 26, 15, 51, 97, 84, 72, };
+            var list = nums.Where(x => x <= 10)
+                            .ToList();    //Whereの結果をList<int>に変換する
+            Console.WriteLine(list[0]);
         }   
     }
 }
