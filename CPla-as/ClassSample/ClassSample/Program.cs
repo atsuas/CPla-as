@@ -8,14 +8,11 @@ namespace ClassSample
     {
         static void Main()
         {
-            var words = new List<string>
+            var nums = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, };
+            var query = nums.Select(x => x * 2);    //各要素を2倍する
+            foreach (var n in query)
             {
-                "effect", "access", "condition", "sign", "profit", "line", "result"
-            };
-            var query = words.Where(x => x.Length == 6);    //長さ6の文字列だけ取り出す
-            foreach (var word in query)
-            {
-                Console.WriteLine(word);
+                Console.WriteLine(n);
             }
         }   
     }
