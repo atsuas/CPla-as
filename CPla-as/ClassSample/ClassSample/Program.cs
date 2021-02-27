@@ -8,28 +8,20 @@ namespace ClassSample
     {
         static void Main()
         {
-            var pet1 = new FoodiePet("たべお");
-            pet1.Play();
-            pet1.Eat();
-            pet1.Sleep();
-            Console.WriteLine($"{pet1.Name} 機嫌:{pet1.Mood} エネルギー:{pet1.Energy}");
+            VirtualPet pet1 = new FoodiePet("たべお");
+            VirtualPet pet2 = new CheerfulPet("ゲンキ");
+            VirtualPet pet3 = new SleepyPet("ねむお");
+            var pets = new List<VirtualPet>();
+            pets.Add(pet1); //3つのオブジェクトをvirtualPet型のリストに格納
+            pets.Add(pet2); //3つのオブジェクトをvirtualPet型のリストに格納
+            pets.Add(pet3); //3つのオブジェクトをvirtualPet型のリストに格納
 
-            var pet2 = new CheerfulPet("げんき");
-            pet2.Play();
-            pet2.Eat();
-            pet2.Sleep();
-            Console.WriteLine($"{pet2.Name} 機嫌:{pet2.Mood} エネルギー:{pet2.Energy}");
-
-            var pet3 = new SleepyPet("ねむお");
-            pet3.Play();
-            pet3.Eat();
-            pet3.Sleep();
-            Console.WriteLine($"{pet3.Name} 機嫌:{pet3.Mood} エネルギー:{pet3.Energy}");
-
-            //VirtualPet pet1 = new FoodiePet("たべお");
-            //VirtualPet pet2 = new FoodiePet("たべお");
-            //VirtualPet pet3 = new FoodiePet("たべお");
-
+            foreach (var pet in pets)
+            {
+                pet.Eat();
+                pet.Play();
+                Console.WriteLine($"{pet.Name} 機嫌:{pet.Mood} エネルギー:{pet.Energy}");
+            }
         }   
     }
     class VirtualPet
