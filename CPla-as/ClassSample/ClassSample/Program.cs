@@ -8,13 +8,13 @@ namespace ClassSample
     {
         static void Main()
         {
-            VirtualPet pet1 = new FoodiePet("たべお");
-            VirtualPet pet2 = new CheerfulPet("ゲンキ");
-            VirtualPet pet3 = new SleepyPet("ねむお");
-            var pets = new List<VirtualPet>();
-            pets.Add(pet1); //3つのオブジェクトをvirtualPet型のリストに格納
-            pets.Add(pet2); //3つのオブジェクトをvirtualPet型のリストに格納
-            pets.Add(pet3); //3つのオブジェクトをvirtualPet型のリストに格納
+            var pets = new List<IVirtualPet>();
+            var pet1 = new FoodiePet("たべお");
+            var pet2 = new CheerfulPet("ゲンキ");
+            var pet3 = new SleepyPet("ねむお");
+            pets.Add(pet1);
+            pets.Add(pet2);
+            pets.Add(pet3);
 
             foreach (var pet in pets)
             {
@@ -24,48 +24,45 @@ namespace ClassSample
             }
         }   
     }
-    abstract class VirtualPet
+
+    interface IVirtualPet   //interfaceキーワードでインターフェースを定義
+    {
+        string Name { get; }
+        int Mood { get; set; }
+        int Energy { get; set; }
+        void Eat();
+        void Play();
+        void Sleep();
+    }
+
+
+
+    class FoodiePet : IVirtualPet
     {
         public string Name { get; private set; }
         public int Mood { get; set; }
         public int Energy { get; set; }
 
-        //コンストラクター
-        public VirtualPet(string name)
+        public FoodiePet(string name)
         {
             Name = name;
             Mood = 5;
             Energy = 100;
         }
-
-        public abstract void Eat();     //abstractキーワードで抽象メソッドにする
-        public abstract void Play();    //abstractキーワードで抽象メソッドにする
-        public abstract void Sleep();   //abstractキーワードで抽象メソッドにする
-
-    }
-
-    class FoodiePet : VirtualPet
-    {
-        public FoodiePet(string name) : base(name)  //baseキーワードで継承元のコンストラクターを呼び出す
-        {
-
-        }
-
-        public override void Eat()  //overrideを使って上書き定義
+        public void Eat()   //インターフェースを実装する場合はoverrideは不要
         {
             Mood += 3;
             Energy += 5;
             Console.WriteLine("FoodiePet.Eatメソッドが実行されました");
         }
-
-        public override void Play() //overrideを使って上書き定義
+        public void Play()  //インターフェースを実装する場合はoverrideは不要
         {
             Mood -= 1;
             Energy -= 10;
             Console.WriteLine("FoodiePet.Playメソッドが実行されました");
         }
 
-        public override void Sleep()    //overrideを使って上書き定義
+        public void Sleep() //インターフェースを実装する場合はoverrideは不要
         {
             Mood -= 1;
             Energy += 2;
@@ -73,26 +70,32 @@ namespace ClassSample
         }
     }
 
-    class CheerfulPet : VirtualPet
+    class CheerfulPet : IVirtualPet
     {
-        public CheerfulPet(string name) : base(name)
-        {
+        public string Name { get; private set; }
+        public int Mood { get; set; }
+        public int Energy { get; set; }
 
-        }
-        public override void Eat()
+        public CheerfulPet(string name)
         {
-            Mood += 0;  //値は変化しない
+            Name = name;
+            Mood = 5;
+            Energy = 100;
+        }
+        public void Eat()   //インターフェースを実装する場合はoverrideは不要
+        {
+            Mood += 0;
             Energy += 5;
             Console.WriteLine("CheerfulPet.Eatメソッドが実行されました");
         }
-        public override void Play()
+        public void Play()  //インターフェースを実装する場合はoverrideは不要
         {
             Mood += 3;
             Energy -= 10;
             Console.WriteLine("CheerfulPet.Playメソッドが実行されました");
         }
 
-        public override void Sleep()
+        public void Sleep() //インターフェースを実装する場合はoverrideは不要
         {
             Mood -= 1;
             Energy += 2;
@@ -100,26 +103,32 @@ namespace ClassSample
         }
     }
 
-    class SleepyPet : VirtualPet
+    class SleepyPet : IVirtualPet
     {
-        public SleepyPet(string name) : base(name)
-        {
+        public string Name { get; private set; }
+        public int Mood { get; set; }
+        public int Energy { get; set; }
 
+        public SleepyPet(string name)
+        {
+            Name = name;
+            Mood = 5;
+            Energy = 100;
         }
-        public override void Eat()
+        public void Eat()   //インターフェースを実装する場合はoverrideは不要
         {
             Mood -= 1;
             Energy += 5;
             Console.WriteLine("SleepyPet.Eatメソッドが実行されました");
         }
-        public override void Play()
+        public void Play()  //インターフェースを実装する場合はoverrideは不要
         {
             Mood -= 1;
             Energy -= 10;
             Console.WriteLine("SleepyPet.Playメソッドが実行されました");
         }
 
-        public override void Sleep()
+        public void Sleep() //インターフェースを実装する場合はoverrideは不要
         {
             Mood += 2;
             Energy += 2;
