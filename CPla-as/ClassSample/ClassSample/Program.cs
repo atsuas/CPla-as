@@ -8,12 +8,14 @@ namespace ClassSample
     {
         static void Main()
         {
-            var nums = new List<int> { 12, 69, 38, 32, 63, 55, 71, 93, 39, 48 };
-
-            var query = nums.Where(x => x >= 50);   //Whereは条件に一致した要素を抜き出す
-            foreach (var n in query)
+            var words = new List<string>
             {
-                Console.WriteLine(n);
+                "effect", "access", "condition", "sign", "profit", "line", "result"
+            };
+            var query = words.Where(x => x.Length == 6);    //長さ6の文字列だけ取り出す
+            foreach (var word in query)
+            {
+                Console.WriteLine(word);
             }
         }   
     }
