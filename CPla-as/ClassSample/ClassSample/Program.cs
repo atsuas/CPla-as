@@ -6,27 +6,39 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var nums = ArrayUtils.GetArray(5);
-            var total = 0;
-            foreach (var x in nums)
-            {
-                total += x;
-            }
-            Console.WriteLine($"合計: {total}");
+            var scores = new int[] { 55, 70, 43, 79, 17, 31, 48 };
+            var total = ArrayUtils.Total(scores);
+            Console.WriteLine(total);
+
+            var scores2 = new double[] { 5.8, 6.2, 5.9, 2.1, 6.6, 9.5, 3.8 };
+            var total2 = ArrayUtils.Total(scores2);
+            Console.WriteLine(total2);
         }
 
         static class ArrayUtils
         {
-            public static int[] GetArray(int count)
+            //①int型の配列の数値の合計を求める
+            public static int Total(int [] numbers)
             {
-                var array = new int[count];
-                for (var i = 0; i < count; i++)
+                var total = 0;
+                foreach (var n in numbers)
                 {
-                    var line = Console.ReadLine();
-                    array[i] = int.Parse(line);
+                    total += n;
                 }
-                return array;
+                return total;
             }
+
+            // ②double型の配列内の数値の合計を求める
+            public static double Total(double[] numbers)   //同じメソッド名で引数が異なる
+            {
+                var total = 0.0;
+                foreach (var n in numbers)
+                {
+                    total += n;
+                }
+                return total;
+            }
+
         }
     }
 }
