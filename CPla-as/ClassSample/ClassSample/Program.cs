@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;  // LINQを使うのに必要
 
 namespace ClassSample
 {
@@ -7,37 +8,14 @@ namespace ClassSample
     {
         static void Main()
         {
-            var books = new List<Book>();   //Book型のリストを生成
-            var book1 = new Book("吾輩は猫である", "夏目漱石", 620, 4);
-            books.Add(book1);   //1冊目を追加
-            var book2 = new Book("人間失格", "太宰治", 300, 5);
-            books.Add(book2);   //2冊目を追加
+            var nums = new List<int> { 12, 69, 38, 32, 63, 55, 71, 93, 39, 48 };
 
-            //省略もできる
-            //books.Add(new Book("吾輩は猫である", "夏目漱石", 620, 4));
-            //books.Add(new Book("人間失格", "太宰治", 300, 5));
-
-            foreach (var book in books)
+            var query = nums.Where(x => x >= 50);   //Whereは条件に一致した要素を抜き出す
+            foreach (var n in query)
             {
-                Console.WriteLine($"{book.Title} {book.Auther} {book.Pages} {book.Rating}");
+                Console.WriteLine(n);
             }
         }   
-    }
-
-    class Book
-    {
-        public string Title { get; set; }
-        public string Auther { get; set; }
-        public int Pages { get; set; }
-        public int Rating { get; set; }
-
-        public Book(string title, string auther, int pages, int rating)
-        {
-            Title = title;
-            Auther = auther;
-            Pages = pages;
-            Rating = rating;
-        }
     }
 }
 
