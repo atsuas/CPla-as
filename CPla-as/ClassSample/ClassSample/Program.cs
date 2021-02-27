@@ -16,18 +16,15 @@ namespace ClassSample
                 Email = "tomotomo@example.com",
                 HireDate = new DateTime(2016, 10, 3)
             };
-            Console.WriteLine("従業員番号{0}の{1}は、{2}年に入社しました",
-                employee.Number, employee.FullName, employee.HireDate.Year);
+            employee.Print();   //オーバライドしたEmployeeクラスのPrintメソッドを呼び出す
 
-            //メソッドの呼び出し
             var person = new Person
             {
                 FirstName = "ゆか",
                 LastName = "佐々木",
                 Email = "sasasa@example.com"
             };
-            person.Print();
-            employee.Print();
+            person.Print(); //PersonクラスのPrintメソッドを呼び出す
         }   
     }
 
@@ -41,7 +38,7 @@ namespace ClassSample
         }
         public string Email { get; set; }
 
-        public void Print() //メソッドを追加
+        public virtual void Print() //virtualキーワードをつけるとサブクラスでオーバライドできる
         {
             Console.WriteLine($"名前: {FullName} ({Email})");
         }
@@ -51,6 +48,12 @@ namespace ClassSample
     {
         public int Number { get; set; }
         public DateTime HireDate { get; set; }
+
+        // overrideキーワードでメソッドを上書きできる
+        public override void Print()
+        {
+            Console.WriteLine($"{Number}:{FullName}({Email}) {HireDate.Year}年入社");
+        }
     }
 
     class Customer : Person
