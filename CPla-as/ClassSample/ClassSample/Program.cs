@@ -8,8 +8,9 @@ namespace ClassSample
     {
         static void Main()
         {
-            var nums = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, };
-            var query = nums.Select(x => x * 2);    //各要素を2倍する
+            var nums = new int[] { 6, 4, 3, 2, 5, 1, 9, 8, 7, };
+            var query = nums.OrderByDescending(x => x)
+                            .Take(3);    //先頭の3つを取り出す
             foreach (var n in query)
             {
                 Console.WriteLine(n);
