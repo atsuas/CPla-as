@@ -6,7 +6,9 @@ namespace ClassSample
     {
         static void Main(string[] args)
         {
-            var mypet = new VirtualPet();   //インスタンス生成時にコンストラクタが呼び出される
+            Console.Write("名前を入力してください⇒");
+            var name = Console.ReadLine();
+            var mypet = new VirtualPet(name);   //引数を指定したコンストラクターが呼ばれる
             Console.WriteLine($"Name: {mypet.Name}");
             Console.WriteLine($"Mood: {mypet.Mood}");
             Console.WriteLine($"Energy: {mypet.Energy}");
@@ -19,9 +21,9 @@ namespace ClassSample
             public int Mood { get; set; }
             public int Energy { get; set; }
 
-            public VirtualPet() //コンストラクターの名前はクラスと同じにする
+            public VirtualPet(string name) //コンストラクターの名前はクラスと同じにする
             {
-                Name = "エイミー";
+                Name = name;
                 Mood = 5;
                 Energy = 100;
             }
