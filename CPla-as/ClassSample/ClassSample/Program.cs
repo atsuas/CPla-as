@@ -24,7 +24,7 @@ namespace ClassSample
             }
         }   
     }
-    class VirtualPet
+    abstract class VirtualPet
     {
         public string Name { get; private set; }
         public int Mood { get; set; }
@@ -38,18 +38,10 @@ namespace ClassSample
             Energy = 100;
         }
 
-        public virtual void Eat()   //virtualキーワードを使っている
-        {
+        public abstract void Eat();     //abstractキーワードで抽象メソッドにする
+        public abstract void Play();    //abstractキーワードで抽象メソッドにする
+        public abstract void Sleep();   //abstractキーワードで抽象メソッドにする
 
-        }
-        public virtual void Play()
-        {
-
-        }
-        public virtual void Sleep()
-        {
-
-        }
     }
 
     class FoodiePet : VirtualPet
