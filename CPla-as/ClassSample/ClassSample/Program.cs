@@ -34,13 +34,25 @@ namespace ClassSample
 
         public int Rating   //プロパティの定義
         {
+            //getアクセサ、setアクセサー内は、メソッドと同様、複数行の処理が欠ける
             get //getアクセサーの定義
             {
                 return _rating; //参照時にこのコードが実行される
             }
             set //setアクセサーの定義
             {
-                _rating = value;    //代入時にこのコードが実行される
+                if (value <= 1) //1以下の値はすべて1をセット
+                {
+                    _rating = 1;
+                }
+                else if (value >= 6) //6以上の値はすべて5をセット
+                {
+                    _rating = 5;
+                }
+                else
+                {
+                    _rating = value;
+                }
             }
         }
 
