@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;   //Listを使う際に必要
 
 namespace ClassSample
 {
@@ -6,40 +7,28 @@ namespace ClassSample
     {
         static void Main()
         {
-            var book = GetBook();   //nullかどうかでGetBookが成功したかどうかを判断
-            if (book == null)
+            var lines = new List<string>
             {
-                Console.WriteLine("bookオブジェクトは生成できませんでした");
-            }
-            else
-            {
-                Console.WriteLine($"{book.Title} {book.Auther}");
-            }
-        }
-        private static Book GetBook()
-        {
-            var line = Console.ReadLine();
-            var items = line.Split(',');
-            if (items.Length != 2)
-            {
-                return null;    //入力したデータが正しくない場合はnullを返す
-            }
-            var book = new Book
-            {
-                Title = items[0],
-                Auther = items[1],
+                "おはよう",
+                "こんにちは",
+                "こんばんは"
             };
-            return book;
+            lines.Add("おやすみ");  //Listに追加する際はAddを使う
+            lines.Add("さようなら");
+            lines.RemoveAt(2);  //リストから指定の要素を削除する
+
+            foreach (var s in lines)
+            {
+                Console.WriteLine(s);
+            }
+
+            var count = lines.Count;    //リストの要素数を取得するにはCountを使う
+            Console.WriteLine(count);
+
+            lines.Clear();  //すべての要素を削除するときはClearメソッドを使う
+            Console.WriteLine($"{lines.Count}");
+
         }
-    }
-
-    class Book
-    {
-        public string Title { get; set; }
-        public string Auther { get; set; }
-        public int Pages { get; set; }
-        public int Rating { get; set; }
-
     }
 }
 
