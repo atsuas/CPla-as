@@ -2,54 +2,44 @@
 
 namespace ClassSample
 {
-    //card構造体
-    struct Card
+    class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var card = new Card('S', 8);    //構造体もnew演算子でインスタンスを生成する
-            card.Print();
-            if (card.Suit == 'D')
+            var book = GetBook();   //nullかどうかでGetBookが成功したかどうかを判断
+            if (book == null)
             {
-                Console.WriteLine("ダイヤです");
+                Console.WriteLine("bookオブジェクトは生成できませんでした");
             }
             else
             {
-                Console.WriteLine("ダイヤではありません");
+                Console.WriteLine($"{book.Title} {book.Auther}");
             }
         }
-
-        public char Suit { get; private set; }  //読み取り専用プロパティ
-        public int Number { get; private set; } //読み取り専用プロパティ
-
-        //コンストラクター
-        public Card(char suit, int number)
+        private static Book GetBook()
         {
-            Suit = suit;
-            Number = number;
-        }
-
-        //メソッド
-        public void Print()
-        {
-            var s = "";
-            switch (Suit)
+            var line = Console.ReadLine();
+            var items = line.Split(',');
+            if (items.Length != 2)
             {
-                case 'H':
-                    s = "ハート";
-                    break;
-                case 'D':
-                    s = "ダイヤ";
-                    break;
-                case 'S':
-                    s = "スペード";
-                    break;
-                case 'C':
-                    s = "クラブ";
-                    break;
+                return null;    //入力したデータが正しくない場合はnullを返す
             }
-            Console.WriteLine($"{s} {Number}");
+            var book = new Book
+            {
+                Title = items[0],
+                Auther = items[1],
+            };
+            return book;
         }
+    }
+
+    class Book
+    {
+        public string Title { get; set; }
+        public string Auther { get; set; }
+        public int Pages { get; set; }
+        public int Rating { get; set; }
+
     }
 }
 
