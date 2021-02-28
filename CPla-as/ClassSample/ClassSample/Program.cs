@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ClassSample
 {
@@ -8,32 +9,29 @@ namespace ClassSample
         {
             try
             {
-                var bc = new BmiCalculator();
-                var bmi = bc.GetBmi(1.57, 49.5);
-                Console.WriteLine(bmi);
+                ReadSample();
             }
-            catch (ArgumentException ex)  //ArgumentExceptionだけをキャッチする
+            catch
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("ReadSampleでエラーが発生");
             }
-        }   
-    }
+        }
 
-    class BmiCalculator
-    {
-        public double GetBmi(double height, double weight)
+        private static void ReadSample()
         {
-            if (height < 60.0 || 250 < height)
+            var file = new StreamReader("test.txt");
+            try
             {
-                throw new ArgumentException("heightの指定に誤りがあります"); //例外をスローする
+                while (file.EndOfStream == false)
+                {
+                    var line = file.ReadLine();
+                    Console.WriteLine(line);
+                }
             }
-            if (weight < 10.0 || 200.0 < weight)
+            finally
             {
-                throw new ArgumentException("weightの指定に誤りがあります"); //例外をスローする
+                file.Dispose();
             }
-            var metersTall = height / 100.0;
-            var bmi = weight / (metersTall * metersTall);
-            return bmi;
         }
     }
 }
