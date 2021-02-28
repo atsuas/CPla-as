@@ -19,19 +19,14 @@ namespace ClassSample
 
         private static void ReadSample()
         {
-            var file = new StreamReader("test.txt");
-            try
+            using (var file = new StreamReader("test.txt"))
             {
                 while (file.EndOfStream == false)
                 {
                     var line = file.ReadLine();
                     Console.WriteLine(line);
                 }
-            }
-            finally
-            {
-                file.Dispose();
-            }
+            }   //Disposeメソッドは書かれていないが、最後にfile.Disaposeが呼ばれる
         }
     }
 }
