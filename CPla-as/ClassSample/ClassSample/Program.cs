@@ -8,33 +8,32 @@ namespace ClassSample
         {
             try
             {
-                Book book = null;
-                var title = book.Title;
-                Console.WriteLine(title);
+                var bc = new BmiCalculator();
+                var bmi = bc.GetBmi(1.57, 49.5);
+                Console.WriteLine(bmi);
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)  //ArgumentExceptionだけをキャッチする
             {
-                Console.WriteLine($"Type: {ex.GetType().Name}");
-                Console.WriteLine($"Message: {ex.Message}");
-                Console.WriteLine($"TargetSite: {ex.TargetSite}");
-                Console.WriteLine($"StackTrace: {ex.StackTrace}");
+                Console.WriteLine(ex.Message);
             }
         }   
     }
 
-    class Book
+    class BmiCalculator
     {
-        public string Title { get; set; }
-        public string Auther { get; set; }
-        public int Pages { get; set; }
-        public int Rating { get; set; }
-
-        public Book(string title, string auther, int pages, int rating)
+        public double GetBmi(double height, double weight)
         {
-            Title = title;
-            Auther = auther;
-            Pages = pages;
-            Rating = rating;
+            if (height < 60.0 || 250 < height)
+            {
+                throw new ArgumentException("heightの指定に誤りがあります"); //例外をスローする
+            }
+            if (weight < 10.0 || 200.0 < weight)
+            {
+                throw new ArgumentException("weightの指定に誤りがあります"); //例外をスローする
+            }
+            var metersTall = height / 100.0;
+            var bmi = weight / (metersTall * metersTall);
+            return bmi;
         }
     }
 }
